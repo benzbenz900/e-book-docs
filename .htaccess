@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule . index.php [L]
+</IfModule>
+
+# Prevent file browsing
+Options -Indexes
+
+ErrorDocument 400 /error_view/index/400
+ErrorDocument 401 /error_view/index/401
+ErrorDocument 403 /error_view/index/403
+ErrorDocument 404 /error_view/index/404
+ErrorDocument 500 /error_view/index/500
